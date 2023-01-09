@@ -30,7 +30,7 @@ describe("Todo Application", function () {
     const { text } = await agent.get("/");
     const csrfToken = extractCSRFToken(text);
 
-    
+    const response = await agent.post("/todos").send({
       title: "Buy milk",
       dueDate: new Date().toISOString(),
       _csrf: csrfToken,
