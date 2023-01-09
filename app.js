@@ -12,7 +12,7 @@ const todo = require("./models/todo");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser("shh! some secret string"));
-app.use(csrf("this_should_be_32_character_long", ["POST", "PUT", "DELETE"]));
+
 
 app.set("view engine", "ejs");
 app.get("/", async (request, response) => {
